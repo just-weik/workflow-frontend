@@ -18,3 +18,8 @@ For docker image you might want to use, you can visit [here](https://hub.docker.
 ## Customize configuration
 
 See [Vite Configuration Reference](https://vite.dev/config/).
+
+
+Source Belajar:
+- https://erdkse.com/projects/preview/adminlte-vue (Untuk tampilan apps bentuk AdminLTE)
+- https://vueflow.dev/ (Untuk setup workflow)
