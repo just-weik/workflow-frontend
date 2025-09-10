@@ -56,7 +56,7 @@
                 ]"
                 class="h-[calc(100vh-100px)] transition-all duration-300"
             >
-                <div class="p-2">
+                <div class="py-2 px-4">
                     <slot name="content" />
                 </div>
             </div>

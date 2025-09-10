@@ -1,5 +1,6 @@
 <script setup>
     import Blank from '@/layouts/Blank.vue';
+    import Footer from '@/components/Footer.vue';
 </script>
 
 <template>
@@ -23,7 +24,7 @@
                         <form class="space-y-4">
                             <!-- Email -->
                             <div>
-                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                                <label for="email" class="block font-medium text-gray-700 mb-1">Email</label>
                                 <input
                                     id="email"
                                     type="email"
@@ -34,7 +35,7 @@
 
                             <!-- Password -->
                             <div>
-                                <label for="password" class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+                                <label for="password" class="block font-medium text-gray-700 mb-1">Password</label>
                                 <input
                                     id="password"
                                     type="password"
@@ -62,10 +63,7 @@
                         </form>
 
                         <!-- Footer -->
-                        <p class="mt-6 text-center text-sm text-gray-600">
-                            Don’t have an account?
-                            <a href="#" class="text-blue-600 hover:underline">Sign up</a>
-                        </p>
+                        <Footer layout-type='blank' />
                     </div>
                 </div>
             </div>
