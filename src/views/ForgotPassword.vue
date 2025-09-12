@@ -5,16 +5,15 @@
     import Footer from '@/components/Footer.vue';
 
     const router = useRouter();
-    const loginRequestSent = ref(false);
-    const rememberMe = ref(false);
+    const forgotPasswordRequestSent = ref(false);
 
-    const doLogin = (event) => {
+    const doForgotPassword = (event) => {
         event.preventDefault();
         // Implement login logic here
-        loginRequestSent.value = true;
+        forgotPasswordRequestSent.value = true;
         setTimeout(() => {
-            loginRequestSent.value = false;
-            router.push('/'); // Redirect to home after "login"
+            forgotPasswordRequestSent.value = false;
+            router.push('/login'); // Redirect to home after "login"
         }, 3000); // Simulate a network request delay
     };
 </script>
@@ -35,14 +34,14 @@
                 <div class="flex flex-1 items-center justify-center p-6">
                     <div class="w-full max-w-md">
                         <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center lg:text-left">
-                            Login to Your Account
+                            Forgot Password
                         </h2>
-                        <form class="space-y-4" id="login-form">
+                        <form class="space-y-4" id="forgot-password-form">
                             <!-- Email -->
                             <div>
                                 <label for="email" class="block font-medium text-gray-700 mb-1">Email</label>
                                 <input
-                                    :disabled="loginRequestSent"
+                                    :disabled="forgotPasswordRequestSent"
                                     id="email"
                                     type="email"
                                     placeholder="you@example.com"
@@ -50,41 +49,21 @@
                                 />
                             </div>
 
-                            <!-- Password -->
-                            <div>
-                                <label for="password" class="block font-medium text-gray-700 mb-1">Password</label>
-                                <input
-                                    :disabled="loginRequestSent"
-                                    id="password"
-                                    type="password"
-                                    placeholder="••••••••"
-                                    class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                                />
-                            </div>
-
-                            <!-- Remember me + Forgot password -->
-                            <div class="flex items-center justify-between text-sm">
-                                <n-checkbox v-model="rememberMe" :disabled="loginRequestSent">Remember me</n-checkbox>
-                                <router-link to="/forgot-password" #="{ navigate, href }" custom :disabled="loginRequestSent">
-                                    <n-a :href="href" @click="navigate" :class="'text-blue-600 hover:underline'">Forgot password?</n-a>
-                                </router-link>
-                            </div>
-
                             <!-- Button -->
                             <n-button
                                 attr-type="submit"
                                 type="primary"
-                                :loading="loginRequestSent"
-                                :disabled="loginRequestSent"
+                                :loading="forgotPasswordRequestSent"
+                                :disabled="forgotPasswordRequestSent"
                                 :class="['w-full flex justify-center items-center']"
-                                @click="doLogin"
+                                @click="doForgotPassword"
                             >
                                 <template #icon>
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" />
                                     </svg>
                                 </template>
-                                Login
+                                Send Email
                             </n-button>
                         </form>
 

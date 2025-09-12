@@ -14,6 +14,7 @@ export default defineConfig({
             }
         }
     ],
+    // base: '/workflow/', // perlu segera update baca dari env
     resolve: {
         alias: {
             '@': fileURLToPath(new URL('./src', import.meta.url))
